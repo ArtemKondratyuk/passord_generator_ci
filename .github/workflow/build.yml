@@ -25,7 +25,6 @@ jobs:
             run: |             
              pyinstaller --noconfirm --onefile main.py
 
-
           - name: Upload EXE artifact
             uses: actions/upload-artifact@v4
             with:
