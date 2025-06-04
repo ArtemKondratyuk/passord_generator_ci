@@ -1,11 +1,14 @@
 name: Build Windows EXE
+
 on:
     push:
         branches: [main]
     workflow_dispatch:
+
 jobs:
     build:
-        runs-on: windows-latest             
+        runs-on: windows-latest
+              
         steps:
           - name: Checkout repo
             uses: actions/checkout@v4
@@ -24,6 +27,7 @@ jobs:
           - name: Build EXE with PyInstaller  
             run: | 
              pyinstaller --noconfirm --onefile main.py
+
 
           - name: Upload EXE artifact
             uses: actions/upload-artifact@v4
